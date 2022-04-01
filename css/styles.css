@@ -1,0 +1,138 @@
+* {
+  margin: 0; /* creates space around an element*/
+  padding: 0; /* creates space around the content of an elements*/
+  box-sizing: border-box; /* Allows us to include padding & border in an elements total width & height*/
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+
+  padding: 30px;
+}
+
+/* HEADER */
+
+.header {
+  height: 95vh; /*view port height : allow us to size elements & font as a percentage of its total width r height*/
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 131, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative; /*Lets you change the elements position*/
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /* creates clipping region for which part of an element should be shown */
+}
+
+.logo-box {
+  position: absolute; /*They are not positioned based on their usual place but on the position of their ancestor*/
+  top: 40px; /* For both top & left to work we need position relative*/
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden; /*Decides whether or not element should be visible to user*/
+  margin-bottom: 60px;
+}
+
+.heading-primary-main {
+  display: block; /* display elements one after the other*/
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+
+  animation: moveInLeft 1s ease-out;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+
+  animation: moveInRight 1s ease-in;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translate(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 100px;
+
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.bth:active {
+  transform: translateY(-1px);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+  display: inline-block; /* display text according to the writing mode*/
+}
