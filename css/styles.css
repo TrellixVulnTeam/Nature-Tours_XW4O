@@ -1,11 +1,14 @@
-* {
+*,
+*::after,
+*::before {
   margin: 0; /* creates space around an element*/
   padding: 0; /* creates space around the content of an elements*/
-  box-sizing: border-box; /* Allows us to include padding & border in an elements total width & height*/
+  box-sizing: inherit;
 }
 
+/*root font-size*/
 html {
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
 body {
@@ -16,6 +19,7 @@ body {
   color: #777;
 
   padding: 3rem;
+  box-sizing: border-box; /* Allows us to include padding & border in an elements total width & height*/
 }
 
 /* HEADER */
@@ -40,17 +44,17 @@ body {
   ); /* creates clipping region for which part of an element should be shown */
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute; /*They are not positioned based on their usual place but on the position of their ancestor*/
   top: 4rem; /* For both top & left to work we need position relative*/
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -66,7 +70,7 @@ body {
   margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block; /* display elements one after the other*/
   font-size: 6rem;
   font-weight: 400;
@@ -75,7 +79,7 @@ body {
   animation: moveInLeft 1s ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 20px;
   font-weight: 700;
@@ -144,6 +148,7 @@ style an element on focus
 
   transition: all 0.2s;
   position: relative;
+  font-size: 1.6rem; /*Always set font-size to rems not pixels*/
 }
 
 .btn:hover {
@@ -156,7 +161,7 @@ style an element on focus
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -177,7 +182,7 @@ used to style specific parts of an element
   transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -186,7 +191,7 @@ used to style specific parts of an element
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
