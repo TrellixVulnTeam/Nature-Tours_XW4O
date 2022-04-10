@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  margin: 0; /* creates space around an element*/
+  padding: 0; /* creates space around the content of an elements*/
+  box-sizing: inherit;
+}
+
+/*root font-size*/
+html {
+  /*This defines what 1rem is*/
+  font-size: 62.5%;
+}
+
+body {
+  padding: 3rem;
+  box-sizing: border-box; /* Allows us to include padding & border in an elements total width & height*/
+}
