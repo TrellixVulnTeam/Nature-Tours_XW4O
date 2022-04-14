@@ -1,7 +1,6 @@
 /* 1rem = 10px*/
 .row {
   max-width: $grid-width;
-  background-color: #eee;
   margin: 0 auto; /* centering the row(block elements) */
 
   /*not() will select only the elements you want to style*/
@@ -20,7 +19,6 @@
   */
 
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {
